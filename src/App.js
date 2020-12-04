@@ -6,6 +6,7 @@ import Destinations from './components/Destinations'
 import Footer from './components/Footer'
 import Login from './components/Login.js'
 import SignUp from './components/SignUp'
+import Error from './components/Error'
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
       </Route>
       <Route path='/signup'>
         <SignUp />
+      </Route>
+      <Route path='*'>
+        <Error />
       </Route>
       <Footer />
     </Router>
