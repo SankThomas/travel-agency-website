@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Header from './components/Header'
 import Showcase from './components/Showcase'
 import Destinations from './components/Destinations'
@@ -13,19 +13,21 @@ function App() {
     <Router>
       <Header />
 
-      <Route exact path='/'>
-        <Showcase />
-        <Destinations />
-      </Route>
-      <Route path='/login'>
-        <Login />
-      </Route>
-      <Route path='/signup'>
-        <SignUp />
-      </Route>
-      <Route path='*'>
-        <Error />
-      </Route>
+      <Switch>
+        <Route exact path='/'>
+          <Showcase />
+          <Destinations />
+        </Route>
+        <Route path='/login'>
+          <Login />
+        </Route>
+        <Route path='/signup'>
+          <SignUp />
+        </Route>
+        <Route path='*'>
+          <Error />
+        </Route>
+      </Switch>
       <Footer />
     </Router>
   )
